@@ -1,6 +1,4 @@
-import axios from 'axios'
-import { AxiosResponse } from 'axios'
-import { router } from '../router'
+import axios, { AxiosResponse } from 'axios'
 
 type Result<T> = {
   success: boolean
@@ -70,22 +68,22 @@ export const useSignUpRequest = (params: any): Promise<Result<any>> => {
 }
 
 export const useSharedConvsRequest = (params: any): Promise<Result<any>> => {
-  return httpService.post('/getSharedInteractions', params)
+  return httpService.post('/api/getSharedInteractions', params)
 }
 
 export const useLoginRequest = (params: { email: string; token: string }) => {
-  return httpService.post('/login', params)
+  return httpService.post('/api/login', params)
 }
 
 export const useRegisterRequest = (params: {
   email: string,
   name: string,
 }) => {
-  return httpService.post('/register', params)
+  return httpService.post('/api/register', params)
 }
 
 export const useLogoutRequest = (): Promise<Result<any>> => {
-  return httpService.get('/logout')
+  return httpService.get('/api/logout')
 }
 
 /**

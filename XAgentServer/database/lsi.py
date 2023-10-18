@@ -309,6 +309,6 @@ class InteractionLocalStorageInterface(InteractionBaseInterface):
             json.dump(self.interaction_list_cache, f,
                       indent=2, ensure_ascii=False)
 
-    def get_shared_interaction(self, interaction_id: str) -> InteractionBase | None:
+    def get_shared_interaction(self, interaction_id: str, page_size: int=20, page_index: int=1) -> InteractionBase | None:
         raise NotImplementedError
     
